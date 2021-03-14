@@ -1,5 +1,6 @@
 #include <iostream>
 #include "src/RichList.h"
+#include "src/Range.h"
 
 using namespace std;
 
@@ -27,6 +28,10 @@ int main() {
     richList.ForEach([](auto item) {
         cout << "Item value: " << item << endl;
     });
+
+    for (auto i : Range<1, 10>()) {
+        cout << i << endl;
+    }
 
     return 0;
 }
