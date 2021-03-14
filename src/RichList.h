@@ -36,7 +36,7 @@ class RichList {
 
         [[nodiscard]] RichNode* Next() {
             if (!this->HasNext()) {
-                throw std::invalid_argument("Accessing null Next() element");
+                throw range_error("Accessing null Next() element");
             }
 
             return this->next;
@@ -145,7 +145,7 @@ public:
 
     [[nodiscard]] RichNode* Get(unsigned long index) {
         if (index >= this->length) {
-            throw std::invalid_argument(&"Index out of bound: " [ index]);
+            throw invalid_argument(&"Index out of bound: " [index]);
         }
 
         auto currentNode = this->first;
